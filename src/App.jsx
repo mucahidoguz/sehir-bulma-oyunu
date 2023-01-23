@@ -93,7 +93,7 @@ const App = () => {
     <div className="relative">
       {!isGameOn && <Choose key="modal" setGameType={setGameType} />}
       {gameType !== "" && (
-        <div className={"absolute w-full" + `${isGameOn ? "z-30" : "z-0"}`}>
+        <div className={"absolute w-full " + `${isGameOn ? "z-30" : "z-0"}`}>
           <GameInterface
             gameType={gameType}
             cityToBeGuessed={cityToBeGuessed}

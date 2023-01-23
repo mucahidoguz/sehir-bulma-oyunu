@@ -83,7 +83,7 @@ const GameInterface = ({ gameType, cityToBeGuessed }) => {
   };
 
   return (
-    <div className="absolute text-center top-40 z-20">
+    <div className="absolute text-center top-40 w-full z-20">
       <div className="inline-flex space-x-6">
         <motion.div
           variants={countdownOptions}

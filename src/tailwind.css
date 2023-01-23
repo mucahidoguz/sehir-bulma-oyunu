@@ -8,9 +8,9 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-/* .choose-btn {
+ .choose-btn {
     @apply 
-    px-3 
+    px-3
     py-2 
     bg-orange-400 
     text-primaryLight 
@@ -42,4 +42,4 @@ width: 60px;
 height: 70px;
 border: 2px solid white;
 border-radius: 2px;
-}  */
+}  

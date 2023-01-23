@@ -40,7 +40,7 @@ const GameInterface = ({ gameType, cityToBeGuessed }) => {
       opacity: 0
     },
     visible: {
-      x: 0,
+      x: "0",
       y: "-50px",
       opacity: 1,
       transition: {
@@ -57,7 +57,7 @@ const GameInterface = ({ gameType, cityToBeGuessed }) => {
       opacity: 0
     },
     visible: {
-      x: 0,
+      x: "0",
       y: "-50px",
       opacity: 1,
       transition: {
@@ -83,8 +83,8 @@ const GameInterface = ({ gameType, cityToBeGuessed }) => {
   };
 
   return (
-    <div className="absolute  text-center top-40 w-full z-20 ">
-      <div className="inline-flex  space-x-6">
+    <div className="absolute text-center top-40 z-20">
+      <div className="inline-flex space-x-6">
         <motion.div
           variants={countdownOptions}
           initial="hidden"
@@ -92,23 +92,25 @@ const GameInterface = ({ gameType, cityToBeGuessed }) => {
         >
           <Countdown />
         </motion.div>
+
         <motion.div variants={inputOptions} initial="hidden" animate="visible">
           {gameType === TYPING ? (
             <input
+              className="px-6 py-3 w-96 rounded-lg appearance-none border-none outline-none text-primaryDark font-bold text-2xl text-center shadow-amber-900/40 shadow-xl"
               type="text"
               ref={inputRef}
               onChange={(e) => setTypedCity(e.target.value)}
-              className="px-6 py-3 w-96 rounded-lg appearance-none border-none outline-none text-primaryDark font-bold text-2xl text-center shadow-amber-900/40 shadow-xl"
             />
           ) : (
             <input
+              className="px-6 py-3 w-96 rounded-lg appearance-none border-none outline-none text-primaryDark font-bold text-2xl text-center shadow-amber-900/40 shadow-xl"
               type="text"
               readOnly
               value={cityToBeGuessed}
-              className="px-6 py-3 w-96 rounded-lg appearance-none border-none outline-none text-primaryDark font-bold text-2xl text-center shadow-amber-900/40 shadow-xl"
             />
           )}
         </motion.div>
+        
         <motion.div variants={scoreOptions} initial="hidden" animate="visible">
           <Score />
         </motion.div>

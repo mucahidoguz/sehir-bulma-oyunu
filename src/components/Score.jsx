@@ -1,6 +1,7 @@
 import { useAnimation, motion } from "framer-motion";
 import React, { useContext, useState, useEffect } from "react";
 import { GameContext } from "../context/GameContext";
+import { localStorageKey } from "../../constant";
 
 const Score = () => {
   const { score } = useContext(GameContext);
@@ -9,13 +10,13 @@ const Score = () => {
   const controls = useAnimation();
 
   const updateLocalStorage = () => {
-    const initialScore = localStorage.getItem("guess-the-city-score");
+    const initialScore = localStorage.getItem(localStorageKey);
     if (!initialScore && score > 0) {
-      localStorage.setItem("guess-the-city-score", score);
+      localStorage.setItem(localStorageKey, score);
       return;
     }
     if (parseInt(initialScore) < score) {
-      localStorage.setItem("guess-the-city-score", score);
+      localStorage.setItem(localStorageKey, score);
     }
   };
 
@@ -47,7 +48,8 @@ const Score = () => {
         duration: 0.5
       }}
       className={
-        "w-14 h-14 text-primaryLight bg-pink-600 font-bold text-4xl justify-center items-center rounded-lg border-white border-2 " +
+        "w-14 h-14 text-primaryLight bg-pink-600 font-bold text-4xl justify-center items-center"+ 
+        "rounded-lg border-white border-2 " +
         `${isAnimating ? "" : "shadow-amber-900/40 shadow-xl"}`
       }
     >
